@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject} from '@angular/core';
 
-// Close the dialog on success
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
