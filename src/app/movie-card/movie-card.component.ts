@@ -1,6 +1,10 @@
 // src/app/movie-card/movie-card.component.ts
 import { Component, OnInit } from '@angular/core';
 import { fetchApiDataService } from '../fetch-api-data.service'
+import { MatDialog } from '@angular/material/dialog';
+import { GenreComponent } from '../genre/genre.component';
+import { DirectorComponent } from '../director/director.component';
+import { AddToFavoritesComponent } from '../add-to-favorites/add-to-favorites.component';
 
 @Component({
   selector: 'app-movie-card',
