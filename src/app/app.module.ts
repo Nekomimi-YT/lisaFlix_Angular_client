@@ -21,6 +21,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { AddToFavoritesComponent } from './add-to-favorites/add-to-favorites.component';
+import { SynopsisComponent } from './synopsis/synopsis.component';
 
 // app routing instructions. Default = welcome page
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     GenreComponent,
     DirectorComponent,
     AddToFavoritesComponent,
+    SynopsisComponent,
   ],
   imports: [
     BrowserModule,
