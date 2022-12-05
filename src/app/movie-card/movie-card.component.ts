@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { fetchApiDataService } from '../fetch-api-data.service'
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
@@ -17,7 +18,8 @@ export class MovieCardComponent {
   movies: any[] = [];
   constructor(
     public fetchApiData: fetchApiDataService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -33,13 +35,16 @@ export class MovieCardComponent {
     }
 
   // This is the function that will open the dialog when the genre button is clicked  
-  openGenreDialog(): void {
+  openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
-    // Assigning the dialog a width
-    width: '280px'
+      data: {
+        Name: name,
+        Description: description,
+      },
+      width: '400px',
     });
   }
-
+/*
   // This is the function that will open the dialog when the director button is clicked  
   openDirectorDialog(): void {
     this.dialog.open(DirectorComponent, {
@@ -64,4 +69,5 @@ export class MovieCardComponent {
     width: '280px'
     });
   }
+  */
 }

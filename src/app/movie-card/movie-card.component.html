@@ -9,6 +9,7 @@
       <mat-card-actions>
           <button
               mat-button
+              (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
               color="primary"
           >
               Genre
