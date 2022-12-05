@@ -44,16 +44,20 @@ export class MovieCardComponent {
       width: '400px',
     });
   }
-/*
+
   // This is the function that will open the dialog when the director button is clicked  
-  openDirectorDialog(): void {
+  openDirectorDialog(name: string, bio: string, birth: string): void {
     this.dialog.open(DirectorComponent, {
-    // Assigning the dialog a width
-    width: '280px'
+      data: {
+        Name: name,
+        Bio: bio,
+        Birth: birth,
+      },
+    width: '400px'
     });
   }
 
-
+/*
   // This is the function that will open the dialog when synopsis is clicked  
   openSynopsisDialog(): void {
     this.dialog.open(SynopsisComponent, {
