@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // a simplified API for Angular applications that makes it possible for the client app to communicate with the API or server-side
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -16,6 +17,14 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+
+// app routing instructions. Default = welcome page
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomePageComponent },
+  { path: 'movies', component: MovieCardComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +36,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
