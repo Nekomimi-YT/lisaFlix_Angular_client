@@ -49,7 +49,7 @@ export class MovieCardComponent {
   }
 
 
-  // This is the function that will open the dialog when the heart icon is clicked  
+  // This is the function that will open the dialog when synopsis is clicked  
   openSynopsisDialog(): void {
     this.dialog.open(SynopsisComponent, {
     // Assigning the dialog a width
