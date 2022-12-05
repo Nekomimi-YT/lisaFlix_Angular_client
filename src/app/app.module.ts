@@ -18,6 +18,9 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { GenreComponent } from './genre/genre.component';
+import { DirectorComponent } from './director/director.component';
+import { AddToFavoritesComponent } from './add-to-favorites/add-to-favorites.component';
 
 // app routing instructions. Default = welcome page
 const appRoutes: Routes = [
@@ -33,6 +36,9 @@ const appRoutes: Routes = [
     UserLoginFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
+    GenreComponent,
+    DirectorComponent,
+    AddToFavoritesComponent,
   ],
   imports: [
     BrowserModule,
