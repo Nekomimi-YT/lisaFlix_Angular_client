@@ -30,10 +30,11 @@ export class WelcomePageComponent implements OnInit {
     });
   }
 
-  // This is the function that will open the dialog when the get all movies button is clicked  
+  /* This is the function that will open the dialog when the get all movies button is clicked  
   openMoviesDialog(): void {
     this.dialog.open(MovieCardComponent, {
       width: '500px'
     });
   }
+  */
 }
