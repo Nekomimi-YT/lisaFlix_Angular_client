@@ -177,7 +177,6 @@ export class fetchApiDataService {
   }
 
   // Edit user into
-  // Add a favorite movie for a user
   /**
    * @service PUT to an API endpoint to update user's information
    * @param {any} updatedInfo
