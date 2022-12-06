@@ -7,7 +7,6 @@ import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { AddToFavoritesComponent } from '../add-to-favorites/add-to-favorites.component';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-card',
