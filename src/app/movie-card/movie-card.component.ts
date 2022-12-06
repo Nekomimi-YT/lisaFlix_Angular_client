@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
-import { AddToFavoritesComponent } from '../add-to-favorites/add-to-favorites.component';
+//import { AddToFavoritesComponent } from '../add-to-favorites/add-to-favorites.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -16,6 +16,7 @@ import { AddToFavoritesComponent } from '../add-to-favorites/add-to-favorites.co
 
 export class MovieCardComponent {
   movies: any[] = [];
+  favorites: any[] = [];
   constructor(
     public fetchApiData: fetchApiDataService,
     public dialog: MatDialog,
@@ -24,6 +25,7 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
+    this.getFavoriteMovies();
   }
 
   getMovies(): void {
@@ -65,6 +67,40 @@ export class MovieCardComponent {
         Description: description
       },
     width: '400px'
+    });
+  }
+
+  getFavoriteMovies(): void {
+    this.fetchApiData.getFavorites().subscribe((resp: any) => {
+        this.favorites = resp;
+        console.log(this.favorites);
+        return this.favorites;
+      });
+    }
+
+  isFavoriteMovie(movieId: string): boolean {
+    return this.favorites.includes(movieId);
+  }
+
+  addFavoriteMovie(movieId: string): void {
+    this.fetchApiData.addFavorite(movieId).subscribe((result) => {
+      //this.dialogRef.close(); // This will close the modal on success!
+      console.log(result)
+      this.snackBar.open('You have added this movie to your favorites!', 'OK', {
+          duration: 3000
+      });
+    this.ngOnInit();
+    });
+  }
+
+  removeFavoriteMovie(movieId: string): void {
+    this.fetchApiData.deleteFavorite(movieId).subscribe((result) => {
+      //this.dialogRef.close(); // This will close the modal on success!
+      console.log(result)
+      this.snackBar.open('You have deleted this movie from your favorites!', 'OK', {
+          duration: 3000
+      });
+    this.ngOnInit();
     });
   }
 
