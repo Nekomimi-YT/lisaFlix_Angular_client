@@ -7,6 +7,7 @@ import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { AddToFavoritesComponent } from '../add-to-favorites/add-to-favorites.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-card',
@@ -57,15 +58,18 @@ export class MovieCardComponent {
     });
   }
 
-/*
   // This is the function that will open the dialog when synopsis is clicked  
-  openSynopsisDialog(): void {
+  openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
-    // Assigning the dialog a width
-    width: '280px'
+      data: {
+        Title: title,
+        Description: description
+      },
+    width: '400px'
     });
   }
 
+/*
   // This is the function that will open the dialog when the heart icon is clicked  
   openAddToFavoritesDialog(): void {
     this.dialog.open(AddToFavoritesComponent, {
