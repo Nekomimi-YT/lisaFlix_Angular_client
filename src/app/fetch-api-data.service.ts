@@ -149,7 +149,7 @@ export class fetchApiDataService {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http
-      .get(apiUrl + 'users/' + username + 'movies/', {
+      .get(apiUrl + 'users/' + username + '/movies/', {
         headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
@@ -160,7 +160,7 @@ export class fetchApiDataService {
   // Add a favorite movie for a user
   /**
    * @service POST to an API endpoint to add a favorite movie to user's list
-   * @param {string} movieID
+   * @param {string} movieId
    * @returns returns all user data as a JSON object
    * @function getUser
    */
@@ -168,7 +168,7 @@ export class fetchApiDataService {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http
-      .post(apiUrl + 'users/' + username + 'movies/' + movieId, {
+      .post(apiUrl + 'users/' + username + '/movies/' + movieId, {
         headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
@@ -225,7 +225,7 @@ export class fetchApiDataService {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http
-      .delete(apiUrl + 'users/' + username + 'movies/' + movieID, {
+      .delete(apiUrl + 'users/' + username + '/movies/' + movieID, {
         headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
