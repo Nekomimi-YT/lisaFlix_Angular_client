@@ -168,12 +168,13 @@ export class fetchApiDataService {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http
-      .post(apiUrl + 'users/' + username + '/movies/' + movieId, {
-        headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+      .post(
+        apiUrl + 'users/' + username + '/movies/' + movieId,
+        { favoriteMovie: movieId },
+        {
+          headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData),catchError(this.handleError));
   }
 
   // Edit user into
