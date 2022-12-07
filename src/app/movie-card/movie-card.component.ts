@@ -70,8 +70,8 @@ export class MovieCardComponent {
   }
 
   getFavoriteMovies(): void {
-    this.fetchApiData.getFavorites().subscribe((resp: any) => {
-        this.favorites = resp;
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+        this.favorites = resp.favoriteMovies;
         console.log(this.favorites);
         return this.favorites;
       });
@@ -92,7 +92,7 @@ export class MovieCardComponent {
     });
   }
 
-  removeFavoriteMovie(movieId: string): void {
+  deleteFavoriteMovie(movieId: string): void {
     this.fetchApiData.deleteFavorite(movieId).subscribe((result) => {
       //this.dialogRef.close(); // This will close the modal on success!
       console.log(result)
