@@ -16,6 +16,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 export class MovieCardComponent {
   movies: any[] = [];
   favorites: any[] = [];
+  user = localStorage.getItem('user');
   constructor(
     public fetchApiData: fetchApiDataService,
     public dialog: MatDialog,
