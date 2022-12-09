@@ -4,8 +4,13 @@
     <h1><span>LisFlix</span></h1>
     <span class="spacer"></span>
     <p class="nav-spacing">Hi {{ user }}!</p>
-    <button mat-icon-button class="nav-spacing" aria-hidden="false" aria-label="User information icon">
-      <mat-icon>person</mat-icon>
+    <button 
+      mat-icon-button 
+      (click)="openProfileView()"
+      class="nav-spacing" 
+      aria-hidden="false" 
+      aria-label="User information icon">
+        <mat-icon>person</mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
