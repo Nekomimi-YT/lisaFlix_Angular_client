@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -20,7 +21,8 @@ export class MovieCardComponent {
   constructor(
     public fetchApiData: fetchApiDataService,
     public dialog: MatDialog,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -102,5 +104,9 @@ export class MovieCardComponent {
       });
     this.ngOnInit();
     });
+  }
+
+  openProfileView(): void {
+    this.router.navigate(['profile']);
   }
 }
