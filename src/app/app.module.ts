@@ -24,6 +24,7 @@ import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 // app routing instructions. Default = welcome page
 const appRoutes: Routes = [
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     DirectorComponent,
     SynopsisComponent,
     UserProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
