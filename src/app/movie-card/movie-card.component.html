@@ -1,6 +1,6 @@
 <!-- src/app/movie-card/movie-card.component.html -->
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row style="width: 100vw;">
     <h1><span>LisFlix</span></h1>
     <span class="spacer"></span>
     <p class="nav-spacing">Hi {{ user }}!</p>
@@ -14,57 +14,61 @@
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
-<div style="display: flex;">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
-    <mat-card-header>
+<div class="movie-container">
+  <div class="grid">
+  <mat-card *ngFor="let movie of movies;" class="mat-card__style grid__item"> 
+    <mat-card-header class="mat-card-header__style">
     <mat-card-title>{{ movie.Title }}</mat-card-title>
         <mat-card-subtitle>Directed by: {{ movie.Director.Name }}</mat-card-subtitle>
     </mat-card-header>
-    <img src={{movie.ImagePath}} alt= {{movie.Title}} />
-    <mat-card-actions>
-      <button
-        mat-button
-        (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
-        color="primary"
-        aria-hidden="false" 
-        aria-label="Click to learn about this movie's genre"
-      >
-        Genre
-      </button>
-      <button
-        mat-button
-        (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth)"
-        color="primary"
-        aria-hidden="false" 
-        aria-label="Click to learn about this movie's director"
-      >
-        Director
-      </button>
-      <button
-        mat-button
-        (click)="openSynopsisDialog(movie.Title, movie.Description)"
-        color="primary"
-        aria-hidden="false" 
-        aria-label="Click for a plot synopsis of this movie"
-      >
-        Synopsis
-      </button>
-      <button
-        *ngIf="isFavoriteMovie(movie._id) === false"
-        mat-button
-        (click)="addFavoriteMovie(movie._id)"
-        color="primary"
-      >
-        <mat-icon>favorite_border</mat-icon>
-      </button>
-      <button
-        mat-button
-        *ngIf="isFavoriteMovie(movie._id) === true"
-        (click)="deleteFavoriteMovie(movie._id)"
-        color="primary"
-      >
-        <mat-icon>favorite</mat-icon>
-      </button>
-    </mat-card-actions>
+    <mat-card-content>
+      <img src={{movie.ImagePath}} alt= {{movie.Title}} class="movie-image"/>
+      <mat-card-actions class="mat-card-actions__style">
+        <button
+          mat-button
+          (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
+          color="primary"
+          aria-hidden="false" 
+          aria-label="Click to learn about this movie's genre"
+        >
+          Genre
+        </button>
+        <button
+          mat-button
+          (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth)"
+          color="primary"
+          aria-hidden="false" 
+          aria-label="Click to learn about this movie's director"
+        >
+          Director
+        </button>
+        <button
+          mat-button
+          (click)="openSynopsisDialog(movie.Title, movie.Description)"
+          color="primary"
+          aria-hidden="false" 
+          aria-label="Click for a plot synopsis of this movie"
+        >
+          Synopsis
+        </button>
+        <button
+          *ngIf="isFavoriteMovie(movie._id) === false"
+          mat-button
+          (click)="addFavoriteMovie(movie._id)"
+          color="primary"
+        >
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+        <button
+          mat-button
+          *ngIf="isFavoriteMovie(movie._id) === true"
+          (click)="deleteFavoriteMovie(movie._id)"
+          color="primary"
+        >
+          <mat-icon class="mat-icon__style">favorite</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
   </mat-card>
+  </div>
 </div>

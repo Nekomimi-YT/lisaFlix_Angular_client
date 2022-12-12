@@ -5,3 +5,68 @@
 .spacer {
   flex: 1 1 auto;
 }
+
+.movie-container {
+  width: 95%;
+  padding-top: 25px;
+  margin: auto;
+}
+
+.mat-card__style {
+  flex: 1 1 auto; 
+  align-items: 
+  center; text-align: center;
+}
+
+.mat-card-header__style {
+  padding-bottom: 10px;
+}
+
+.mat-mdc-card-content {
+  padding: none;
+}
+
+.movie-image {
+  border-radius: 5px; 
+  max-width: 200px;
+}
+
+mat-card-actions__style {
+  width: 95%; 
+  margin: auto;
+}
+
+mat-icon__style {
+  padding-left:18px;
+}
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 15px;
+    max-width: 90vw;
+    margin: auto;
+  }
+
+  .grid__item {
+    background-color: gray;
+    border-radius: 10px;
+    min-height: auto;
+    max-width: auto;
+  }
+}
+
+/* Media calls */
+
+@media only screen and (min-width: 1150px) {
+  .grid {
+    grid-template-columns: repeat(3,1fr);
+    max-width: 90vw;
+  }
+
+  .grid__item {
+    min-height: auto;
+    max-width: auto;
+  }
+}
