@@ -16,6 +16,8 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 export class MovieCardComponent {
   movies: any[] = [];
   favorites: any[] = [];
+  allMovies: any[] = [];
+
   constructor(
     public fetchApiData: fetchApiDataService,
     public dialog: MatDialog,
@@ -33,6 +35,16 @@ export class MovieCardComponent {
         console.log(this.movies);
         return this.movies;
       });
+    }
+
+  displayFavorites(): any[] {
+      this.getFavoriteMovies();
+      this.allMovies = this.movies.slice();
+      console.log("allMovies: " + this.allMovies);
+      console.log("favorites: " + this.favorites);
+      this.movies = this.allMovies.filter(obj=> obj._id === this.favorites);
+      console.log("DisplayFaves " + this.movies);
+      return this.movies;
     }
 
   // This is the function that will open the dialog when the genre button is clicked  
@@ -72,7 +84,6 @@ export class MovieCardComponent {
   getFavoriteMovies(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
         this.favorites = resp.favoriteMovies;
-        console.log(this.favorites);
         return this.favorites;
       });
     }
