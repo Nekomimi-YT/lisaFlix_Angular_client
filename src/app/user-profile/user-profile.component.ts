@@ -48,10 +48,10 @@ export class UserProfileComponent implements OnInit{
       localStorage.setItem('birthday', this.updatedInfo.Birthday);
       setTimeout(() => {
         location.reload();
-      }, 3000)
-      this.snackBar.open('Profile updated!', 'OK', {
-        duration: 3500
-      });
+      }, 3500);
+      this.snackBar.open('Profile updated!'), {
+        duration: 2500
+      };
     });
   }
 
