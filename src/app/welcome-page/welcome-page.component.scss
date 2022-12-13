@@ -1,0 +1,16 @@
+.welcome-page__container {
+  text-align: center;
+  height: 100vh;
+  padding-top: 35vh;
+}
+
+.welcome-button {
+  margin-right: 10px; 
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 340px) {
+  .welcome-page__container {
+    padding-top: 27vh;
+  }
+}
