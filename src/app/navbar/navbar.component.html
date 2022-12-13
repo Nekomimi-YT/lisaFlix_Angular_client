@@ -3,12 +3,12 @@
   <mat-toolbar-row style="width: 100vw;">
     <h1><span>LisFlix</span></h1>
     <span class="spacer"></span>
-    <p class="nav-spacing">Hi {{ user }}!</p>
+    <p>Hi {{ user }}!</p>
     <!-- Open dropdown menu button -->
     <button 
       mat-icon-button 
       [matMenuTriggerFor]="menu" 
-      class="nav-spacing" 
+      class="icon-spacing" 
       aria-hidden="false" 
       aria-label="User menu for profile, favorites, logout">
         <mat-icon>person</mat-icon>
@@ -21,13 +21,6 @@
       aria-hidden="false" 
       aria-label="View, edit or delete your profile">
         Profile
-    </button>
-    <button 
-      mat-menu-item
-      (click)="openFavoritesView()" 
-      aria-hidden="false" 
-      aria-label="View favorite movies">
-        Favorites
     </button>
     <button 
       mat-menu-item
