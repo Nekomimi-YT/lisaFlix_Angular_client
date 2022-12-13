@@ -1,7 +1,14 @@
-.icon-spacing {
-  padding: 0 15px;
-}
-
 .spacer {
   flex: 1 1 auto;
+}
+
+.greeting {
+  font-size: small;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 690px) {
+  .greeting {
+    font-size: medium;
+  }
 }

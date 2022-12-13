@@ -3,14 +3,13 @@
   <mat-toolbar-row style="width: 100vw;">
     <h1><span>LisFlix</span></h1>
     <span class="spacer"></span>
-    <p>Hi {{ user }}!</p>
+    <p class="greeting">Hi {{ user }}!</p>
     <!-- Open dropdown menu button -->
     <button 
-      mat-icon-button 
+      mat-mini-fab 
       [matMenuTriggerFor]="menu" 
-      class="icon-spacing" 
       aria-hidden="false" 
-      aria-label="User menu for profile, favorites, logout">
+      aria-label="User menu for profile and logout">
         <mat-icon>person</mat-icon>
     </button>
     <!-- Menu list buttons -->
