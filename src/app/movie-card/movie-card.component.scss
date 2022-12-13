@@ -6,8 +6,6 @@
 
 .mat-card__style {
   flex: 1 1 auto; 
-  align-items: 
-  center; text-align: center;
 }
 
 .mat-card-header__style {
@@ -20,16 +18,16 @@
 
 .movie-image {
   border-radius: 5px; 
-  max-width: 200px;
+  max-width: 250px;
 }
 
-mat-card-actions__style {
+.mat-card-actions__style {
   width: 95%; 
   margin: auto;
 }
 
-mat-icon__style {
-  padding-left:18px;
+.mat-icon__style {
+  padding-left: 18px;
 }
 
 @supports (display: grid) {
@@ -37,28 +35,42 @@ mat-icon__style {
     display: grid;
     grid-template-columns: repeat(1,1fr);
     gap: 15px;
-    max-width: 90vw;
     margin: auto;
   }
 
   .grid__item {
-    background-color: gray;
+    background-color: #B3E5FC;
     border-radius: 10px;
     min-height: auto;
-    max-width: auto;
+    max-width: 305px;
+    margin: auto;
   }
 }
 
 /* Media calls */
-
-@media only screen and (min-width: 1150px) {
-  .grid {
-    grid-template-columns: repeat(3,1fr);
-    max-width: 90vw;
-  }
-
+@media only screen and (min-width: 690px) {
   .grid__item {
-    min-height: auto;
-    max-width: auto;
+    min-width: 400px;
+    max-width: 500px;
   }
 }
+
+@media only screen and (min-width: 786px) {
+  .grid {
+    grid-template-columns: repeat(2,1fr);
+    max-width: 90vw;
+  }
+}
+
+  @media only screen and (min-width: 1150px) {
+    .grid {
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+
+  @media only screen and (min-width: 2550px) {
+    .grid {
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
+
