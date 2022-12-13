@@ -2,6 +2,28 @@
   flex: 1 1 auto;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: whitesmoke;
+}
+
+a:visited {
+  color: whitesmoke;
+}
+
+/* mouse over link */
+a:hover {
+  color: #E65100;
+}
+
+/* selected link */
+a:active {
+  color: whitesmoke;
+}
+
 .greeting {
   font-size: small;
   margin-right: 10px;
