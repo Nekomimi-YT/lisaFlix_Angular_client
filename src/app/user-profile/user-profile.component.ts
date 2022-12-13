@@ -49,9 +49,9 @@ export class UserProfileComponent implements OnInit{
       setTimeout(() => {
         location.reload();
       }, 3500);
-      this.snackBar.open('Profile updated!'), {
-        duration: 2500
-      };
+      this.snackBar.open('Profile updated!', 'OK', {
+        duration: 4000
+      });
     });
   }
 
@@ -60,7 +60,7 @@ export class UserProfileComponent implements OnInit{
       this.router.navigate(['welcome'])
       .then(() => {
         this.snackBar.open('You have successfully deleted your profile', 'OK', {
-          duration: 3500
+          duration: 4000
       });
     });
     this.fetchApiData.deleteUser().subscribe((result) => {
