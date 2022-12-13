@@ -1,5 +1,5 @@
 .movie-container {
-  width: 95%;
+  width: 95vw;
   padding-top: 25px;
   margin: auto;
 }
@@ -65,14 +65,14 @@
   }
 }
 
-@media only screen and (min-width: 786px) {
+@media only screen and (min-width: 930px) {
   .grid {
     grid-template-columns: repeat(2,1fr);
     max-width: 90vw;
   }
 }
 
-  @media only screen and (min-width: 1150px) {
+  @media only screen and (min-width: 1350px) {
     .grid {
       grid-template-columns: repeat(3,1fr);
     }
