@@ -28,8 +28,7 @@ export class UserProfileComponent implements OnInit{
     private router: Router
     ) { }
 
-  ngOnInit(): void {
-   }
+  ngOnInit(): void {}
 
   /*
   formatBirthday(birthday): string {
@@ -46,9 +45,10 @@ export class UserProfileComponent implements OnInit{
       console.log(result)
       localStorage.setItem('user', this.updatedInfo.Username);
       localStorage.setItem('email', this.updatedInfo.Email);
-      if (this.updatedInfo.Birthday != null) {
-        localStorage.setItem('birthday', this.updatedInfo.Birthday);
-      }
+      localStorage.setItem('birthday', this.updatedInfo.Birthday);
+      setTimeout(() => {
+        location.reload();
+      }, 3000)
       this.snackBar.open('Profile updated!', 'OK', {
         duration: 3500
       });
