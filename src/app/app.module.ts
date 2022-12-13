@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     FormsModule,
     MatIconModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
