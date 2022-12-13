@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// You'll use this import to close the dialog on success
-//import { MatDialogRef } from '@angular/material/dialog';
-
 // This import brings in the API calls we created in 6.2
 import { fetchApiDataService } from '../fetch-api-data.service';
 
@@ -26,7 +23,6 @@ export class UserProfileComponent implements OnInit{
 
   constructor(
     public fetchApiData: fetchApiDataService,
-    //public dialogRef: MatDialogRef<UserProfileComponent>,
     public snackBar: MatSnackBar,
     private router: Router
     ) { }
@@ -34,11 +30,9 @@ export class UserProfileComponent implements OnInit{
   ngOnInit(): void {
    }
   
-
   // Update the user's profile information and return a confirmation
   updateUser(): void {
     this.fetchApiData.editUserInfo(this.updatedInfo).subscribe((result) => {
-     // this.dialogRef.close(); // This will close the modal on success
       console.log(result)
       localStorage.setItem('user', this.updatedInfo.Username);
       localStorage.setItem('email', this.updatedInfo.Email);
