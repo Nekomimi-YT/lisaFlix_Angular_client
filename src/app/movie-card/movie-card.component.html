@@ -1,24 +1,30 @@
 <!-- src/app/movie-card/movie-card.component.html -->
 <app-navbar></app-navbar>
 <div class="movie-container">
-  <button
-    mat-button
-    (click)="displayFavorites()"
-    color="accent"
-    aria-hidden="false" 
-    aria-label="Show only favorites"
-  >
-    Filter by Favorites
-  </button>
-  <button
-    mat-button
-    (click)="getMovies()"
-    color="accent"
-    aria-hidden="false" 
-    aria-label="Show All"
-  >
-    Show all
-  </button>
+  <div class="filter-div">
+    <span class="button-spacing">
+      <button
+        mat-raised-button
+        (click)="displayFavorites()"
+        color="accent"
+        aria-hidden="false" 
+        aria-label="Show only favorites"
+      >
+        Filter by Favorites
+      </button>
+    </span>
+    <span>
+      <button
+        mat-raised-button
+        (click)="getMovies()"
+        color="accent"
+        aria-hidden="false" 
+        aria-label="Show All"
+      >
+        Show all
+      </button>
+    </span>
+  </div>
   <div class="grid">
   <mat-card *ngFor="let movie of movies;" class="mat-card__style grid__item"> 
     <mat-card-header class="mat-card-header__style">
