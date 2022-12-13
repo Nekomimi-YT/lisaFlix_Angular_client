@@ -18,6 +18,7 @@ export class UserProfileComponent implements OnInit{
   user = localStorage.getItem('user');
   email = localStorage.getItem('email');
   birthday = localStorage.getItem('birthday');
+  profileBd = this.birthday?.slice(0,10);
 
   @Input() updatedInfo = { Username: '', Password: '', Email: '', Birthday: '' };
 
@@ -29,6 +30,15 @@ export class UserProfileComponent implements OnInit{
 
   ngOnInit(): void {
    }
+
+  /*
+  formatBirthday(birthday): string {
+    let profileBdArray: []; => define in constructor?? 
+    this.profileBdArray = this.birthday?.slice(0,10).split('-'); => create an array: [yyyy,mm,dd]
+    let profileBd = this.profileBdArray?.push(this.profileBdArray.shift().join('/')); push the year to the end and join with /'s
+    return profileBd;
+  }
+  */
   
   // Update the user's profile information and return a confirmation
   updateUser(): void {
