@@ -36,10 +36,10 @@ export class UserRegistrationFormComponent implements OnInit {
     this.snackBar.open("Success! Please login.", 'OK', {
         duration: 4000
     });
-    }, (result) => {
-      this.snackBar.open("Oops! Try again!", 'OK', {
-        duration: 4000
-      });
+  }, (result) => {
+    this.snackBar.open(result, 'OK', {
+      duration: 4000
     });
-  }
+  });
+}
 }
