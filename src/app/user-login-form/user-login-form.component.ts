@@ -34,13 +34,18 @@ export class UserLoginFormComponent implements OnInit {
   // This is the function responsible for sending the form inputs to the backend
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-    localStorage.setItem('user', result.user.Username);
-    localStorage.setItem('token', result.token);
-    localStorage.setItem('favorites', result.user.favoriteMovies);
-    localStorage.setItem('email', result.user.Email);
-    localStorage.setItem('birthday', result.user.Birthday);
-    this.dialogRef.close(); // This will close the modal on success!
-    this.router.navigate(['movies']);
+      localStorage.setItem('user', result.user.Username);
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('favorites', result.user.favoriteMovies);
+      localStorage.setItem('email', result.user.Email);
+      localStorage.setItem('birthday', result.user.Birthday);
+      this.dialogRef.close(); // This will close the modal on success!
+      this.router.navigate(['movies']);
+    },
+    (result) => {
+      this.snackBar.open(result, 'OK', {
+        duration: 4000
+      });
     });
   }
 }
