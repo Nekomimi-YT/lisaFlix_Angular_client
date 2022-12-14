@@ -13,7 +13,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
   styleUrls: ['./movie-card.component.scss']
 })
 
-export class MovieCardComponent {
+export class MovieCardComponent implements OnInit{
   movies: any[] = [];
   favorites: any[] = [];
   allMovies: any[] = [];
@@ -37,6 +37,7 @@ export class MovieCardComponent {
       });
     }
 
+  // Filters movies by favorites
   displayFavorites(): any[] {
       this.getFavoriteMovies();
       this.allMovies = this.movies.slice();
@@ -44,7 +45,7 @@ export class MovieCardComponent {
       return this.movies;
     }
 
-  // This is the function that will open the dialog when the genre button is clicked  
+  // Open the dialog when the genre button is clicked  
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: {
@@ -55,7 +56,7 @@ export class MovieCardComponent {
     });
   }
 
-  // This is the function that will open the dialog when the director button is clicked  
+  // Open the dialog when the director button is clicked  
   openDirectorDialog(name: string, bio: string, birth: string): void {
     this.dialog.open(DirectorComponent, {
       data: {
@@ -67,7 +68,7 @@ export class MovieCardComponent {
     });
   }
 
-  // This is the function that will open the dialog when synopsis is clicked  
+  // Open the dialog when synopsis is clicked  
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
       data: {
@@ -91,7 +92,6 @@ export class MovieCardComponent {
 
   addFavoriteMovie(movieId: string): void {
     this.fetchApiData.addFavorite(movieId).subscribe((result) => {
-      //this.dialogRef.close(); // This will close the modal on success!
       console.log(result)
       this.snackBar.open('You have added this movie to your favorites!', 'OK', {
           duration: 3000
@@ -102,7 +102,6 @@ export class MovieCardComponent {
 
   deleteFavoriteMovie(movieId: string): void {
     this.fetchApiData.deleteFavorite(movieId).subscribe((result) => {
-      //this.dialogRef.close(); // This will close the modal on success!
       console.log(result)
       this.snackBar.open('You have deleted this movie from your favorites!', 'OK', {
           duration: 3000
