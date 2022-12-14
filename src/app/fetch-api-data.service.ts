@@ -248,7 +248,7 @@ export class FetchApiDataService {
         `Error Status code ${error.status}, ` +
         `Error body is: ${error.error}`);
       }
-      return throwError(() => new Error('Something bad happened; please try again later.'));
+      return throwError(() => new Error('Oops! That didn\'t work. Please try again.'));
     }
 
   // Non-typed response extraction function
