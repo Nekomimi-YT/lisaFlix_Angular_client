@@ -2,18 +2,15 @@
   <mat-card-header>
     <mat-card-title class="title">{{ data.Title }}</mat-card-title>
   </mat-card-header>
-  <br>
+  <br />
   <mat-card-content class="content">
-    Critic Rating: {{ data.CriticRating }}<br>
-    Audience Rating: {{ data.AudienceRating }}<br><br>
+    Critic Rating: {{ data.CriticRating }}<br />
+    Audience Rating: {{ data.AudienceRating }}<br /><br />
     {{ data.Description }}
   </mat-card-content>
   <mat-dialog-actions class="padding">
-    <button 
-      mat-raised-button
-      color="primary"
-      (click)="closeDialog()">
-        Close
+    <button mat-raised-button color="primary" (click)="closeDialog()">
+      Close
     </button>
   </mat-dialog-actions>
 </mat-card>

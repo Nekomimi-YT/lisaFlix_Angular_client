@@ -6,17 +6,17 @@
 }
 
 .filter-div {
-  width: 95vw; 
+  width: 95vw;
   margin-bottom: 35px;
   text-align: center;
 }
 
 .button-spacing {
-  padding-right: 10px; 
+  padding-right: 10px;
 }
 
 .mat-card__style {
-  flex: 1 1 auto; 
+  flex: 1 1 auto;
 }
 
 .mat-card-header__style {
@@ -36,12 +36,12 @@
 }
 
 .movie-image {
-  border-radius: 5px; 
+  border-radius: 5px;
   max-width: 250px;
 }
 
 .mat-card-actions__style {
-  width: 95%; 
+  width: 95%;
   margin: auto;
 }
 
@@ -52,13 +52,13 @@
 @supports (display: grid) {
   .grid {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 15px;
     margin: auto;
   }
 
   .grid__item {
-    background-color: #B3E5FC;
+    background-color: #b3e5fc;
     border-radius: 10px;
     min-height: auto;
     max-width: 305px;
@@ -76,20 +76,19 @@
 
 @media only screen and (min-width: 930px) {
   .grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     max-width: 90vw;
   }
 }
 
-  @media only screen and (min-width: 1350px) {
-    .grid {
-      grid-template-columns: repeat(3,1fr);
-    }
+@media only screen and (min-width: 1350px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  @media only screen and (min-width: 2550px) {
-    .grid {
-      grid-template-columns: repeat(4,1fr);
-    }
+@media only screen and (min-width: 2550px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
-
+}

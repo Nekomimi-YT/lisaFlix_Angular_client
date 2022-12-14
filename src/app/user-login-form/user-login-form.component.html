@@ -13,17 +13,17 @@
           type="text"
           name="Username"
           required
-        >
+        />
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Password"
-          type = "password"
+          type="password"
           placeholder="Password"
           name="Password"
           required
-        >
+        />
       </mat-form-field>
     </form>
   </mat-card-content>
@@ -36,7 +36,7 @@
     >
       Login
     </button>
-    <button 
+    <button
       mat-raised-button
       (click)="closeDialog()"
       color="primary"

@@ -7,29 +7,32 @@
     <span class="spacer"></span>
     <p class="greeting">Hi {{ user }}!</p>
     <!-- Open dropdown menu button -->
-    <button 
-      mat-mini-fab 
-      [matMenuTriggerFor]="menu" 
-      aria-hidden="false" 
-      aria-label="User menu for profile and logout">
-        <mat-icon>person</mat-icon>
+    <button
+      mat-mini-fab
+      [matMenuTriggerFor]="menu"
+      aria-hidden="false"
+      aria-label="User menu for profile and logout"
+    >
+      <mat-icon>person</mat-icon>
     </button>
     <!-- Menu list buttons -->
     <mat-menu #menu="matMenu">
-    <button 
-      mat-menu-item
-      (click)="openProfileView()"
-      aria-hidden="false" 
-      aria-label="View, edit or delete your profile">
+      <button
+        mat-menu-item
+        (click)="openProfileView()"
+        aria-hidden="false"
+        aria-label="View, edit or delete your profile"
+      >
         Profile
-    </button>
-    <button 
-      mat-menu-item
-      (click)="logoutUser()"
-      aria-hidden="false" 
-      aria-label="Logout and return to the welcome page">
+      </button>
+      <button
+        mat-menu-item
+        (click)="logoutUser()"
+        aria-hidden="false"
+        aria-label="Logout and return to the welcome page"
+      >
         Logout
-    </button>
-  </mat-menu>
+      </button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

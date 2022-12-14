@@ -2,18 +2,14 @@
   <mat-card-header>
     <mat-card-title class="title">{{ data.Name }}</mat-card-title>
   </mat-card-header>
-  <br>
+  <br />
   <mat-card-content class="content">
-    Born in: {{ data.Birth }}
-    <br><br>
+    Born in: {{ data.Birth }} <br /><br />
     {{ data.Bio }}
   </mat-card-content>
   <mat-dialog-actions class="padding">
-    <button 
-      mat-raised-button
-      color="primary"
-      (click)="closeDialog()">
-        Close
+    <button mat-raised-button color="primary" (click)="closeDialog()">
+      Close
     </button>
   </mat-dialog-actions>
 </mat-card>
