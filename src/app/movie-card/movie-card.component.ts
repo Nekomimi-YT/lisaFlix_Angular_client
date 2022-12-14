@@ -32,7 +32,6 @@ export class MovieCardComponent implements OnInit{
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
         this.movies = resp;
-        console.log(this.movies);
         return this.movies;
       });
     }
@@ -94,7 +93,6 @@ export class MovieCardComponent implements OnInit{
 
   addFavoriteMovie(movieId: string): void {
     this.fetchApiData.addFavorite(movieId).subscribe((result) => {
-      console.log(result)
       this.snackBar.open('You have added this movie to your favorites!', 'OK', {
           duration: 3000
       });
@@ -104,7 +102,6 @@ export class MovieCardComponent implements OnInit{
 
   deleteFavoriteMovie(movieId: string): void {
     this.fetchApiData.deleteFavorite(movieId).subscribe((result) => {
-      console.log(result)
       this.snackBar.open('You have deleted this movie from your favorites!', 'OK', {
           duration: 3000
       });
