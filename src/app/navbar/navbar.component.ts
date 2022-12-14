@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
   user = localStorage.getItem('user');
@@ -15,7 +15,7 @@ export class NavbarComponent {
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
     private router: Router
-  ) { }
+  ) {}
 
   // Route to profile page
   openProfileView(): void {
@@ -25,10 +25,9 @@ export class NavbarComponent {
   // Logout send user back to welcome page
   logoutUser(): void {
     localStorage.clear();
-    this.router.navigate(['welcome'])
-    .then(() => {
+    this.router.navigate(['welcome']).then(() => {
       this.snackBar.open('You have successfully logged out', 'OK', {
-        duration: 3500
+        duration: 3500,
       });
     });
   }

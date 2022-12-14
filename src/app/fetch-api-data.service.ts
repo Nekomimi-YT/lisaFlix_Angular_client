@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://myflix-movieapp-bylisa.herokuapp.com/';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class FetchApiDataService {
-
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {}
@@ -27,8 +28,7 @@ export class FetchApiDataService {
   public userRegistration(userData: any): Observable<any> {
     return this.http
       .post(apiUrl + 'users', userData)
-      .pipe(catchError(this.handleError)
-    );
+      .pipe(catchError(this.handleError));
   }
 
   // User login
@@ -41,14 +41,13 @@ export class FetchApiDataService {
   public userLogin(userData: any): Observable<any> {
     return this.http
       .post(apiUrl + 'login', userData)
-      .pipe(catchError(this.handleError)
-    );
-}
+      .pipe(catchError(this.handleError));
+  }
 
   // Making the API call to return all movies
   /**
    * @service GET to an API endpoint to return all movies
-   * @param 
+   * @param
    * @returns an array of all movies in json format
    * @function getAllMovies
    */
@@ -57,12 +56,12 @@ export class FetchApiDataService {
     return this.http
       .get(apiUrl + 'movies', {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
-  
+
   // Get one movie
   /**
    * @service GET to an API endpoint to return all movies
@@ -75,10 +74,10 @@ export class FetchApiDataService {
     return this.http
       .get(apiUrl + 'movies/' + title, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Get director
@@ -93,10 +92,10 @@ export class FetchApiDataService {
     return this.http
       .get(apiUrl + 'movies/director/' + directorName, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Get genre
@@ -111,10 +110,10 @@ export class FetchApiDataService {
     return this.http
       .get(apiUrl + 'movies/genre/' + genreName, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Get specific user
@@ -130,10 +129,10 @@ export class FetchApiDataService {
     return this.http
       .get(apiUrl + 'users/' + username, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Get favorite movies list
@@ -149,10 +148,10 @@ export class FetchApiDataService {
     return this.http
       .get(apiUrl + 'users/' + username + '/movies/', {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Add a favorite movie for a user
@@ -171,8 +170,9 @@ export class FetchApiDataService {
         { favoriteMovie: movieId },
         {
           headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
-      })
-      .pipe(map(this.extractResponseData),catchError(this.handleError));
+        }
+      )
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Edit user into
@@ -188,17 +188,17 @@ export class FetchApiDataService {
     return this.http
       .put(apiUrl + 'users/' + username, updatedInfo, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Delete user
   /**
    * @service DELETE to an API endpoint to delete all of user's information
    * @param
-   * @returns 
+   * @returns
    * @function deleteUser
    */
   deleteUser(): Observable<any> {
@@ -207,57 +207,59 @@ export class FetchApiDataService {
     return this.http
       .delete(apiUrl + 'users/' + username, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Delete a movie from user favorites
   /**
-     * @service DELETE to an API endpoint to delete a favorite movie
-     * @param {string} movieID
-     * @returns returns all user data as a JSON object
-     * @function deleteFavorite
-     */
+   * @service DELETE to an API endpoint to delete a favorite movie
+   * @param {string} movieID
+   * @returns returns all user data as a JSON object
+   * @function deleteFavorite
+   */
   deleteFavorite(movieID: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http
       .delete(apiUrl + 'users/' + username + '/movies/' + movieID, {
         headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+          Authorization: 'Bearer ' + token,
+        }),
       })
-    })
-    .pipe(map(this.extractResponseData),catchError(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Handle errors
   /**
-     * @param {HttpErrorResponse} error
-     * @returns error message
-     * @function handleError
-     */
+   * @param {HttpErrorResponse} error
+   * @returns error message
+   * @function handleError
+   */
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
-    console.error('Some error occurred:', error.error.message);
+      console.error('Some error occurred:', error.error.message);
     } else {
       console.error(
-        `Error Status code ${error.status}, ` +
-        `Error body is: ${error.error}`);
-      }
-      return throwError(() => new Error(`Username or password error. Please try again.`));
+        `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
+      );
     }
+    return throwError(
+      () => new Error(`Username or password error. Please try again.`)
+    );
+  }
 
   // Non-typed response extraction function
   /**
-     * extracts response data from HTTP response
-     * @param {any} res
-     * @returns response body or an empty object
-     * @function extractResponseData
-     */
+   * extracts response data from HTTP response
+   * @param {any} res
+   * @returns response body or an empty object
+   * @function extractResponseData
+   */
   private extractResponseData(res: any): any {
     const body = res;
-    return body || { };
+    return body || {};
   }
 }
