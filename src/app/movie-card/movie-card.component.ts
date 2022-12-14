@@ -1,4 +1,3 @@
-// src/app/movie-card/movie-card.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -35,7 +34,7 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // Filters movies by favorites
+  // Filter movies by favorites
   displayFavorites(): any[] {
     this.getFavoriteMovies();
     this.allMovies = this.movies.slice();

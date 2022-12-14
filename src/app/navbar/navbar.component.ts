@@ -22,7 +22,7 @@ export class NavbarComponent {
     this.router.navigate(['profile']);
   }
 
-  // Logout send user back to welcome page
+  // Logout and send user back to welcome page
   logoutUser(): void {
     localStorage.clear();
     this.router.navigate(['welcome']).then(() => {
