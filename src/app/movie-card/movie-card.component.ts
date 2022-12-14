@@ -40,10 +40,7 @@ export class MovieCardComponent {
   displayFavorites(): any[] {
       this.getFavoriteMovies();
       this.allMovies = this.movies.slice();
-      console.log("allMovies: " + this.allMovies);
-      console.log("favorites: " + this.favorites);
-      this.movies = this.allMovies.filter(obj=> obj._id === this.favorites);
-      console.log("DisplayFaves " + this.movies);
+      this.movies = this.allMovies.filter(obj=> this.favorites.includes(obj._id));
       return this.movies;
     }
 
