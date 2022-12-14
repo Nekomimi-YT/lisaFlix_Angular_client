@@ -69,11 +69,13 @@ export class MovieCardComponent implements OnInit{
   }
 
   // Open the dialog when synopsis is clicked  
-  openSynopsisDialog(title: string, description: string): void {
+  openSynopsisDialog(title: string, description: string, cRating: string, aRating: string): void {
     this.dialog.open(SynopsisComponent, {
       data: {
         Title: title,
-        Description: description
+        Description: description,
+        CriticRating: cRating,
+        AudienceRating: aRating
       },
     width: '400px'
     });

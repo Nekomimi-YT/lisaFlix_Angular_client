@@ -13,9 +13,10 @@ export class SynopsisComponent implements OnInit {
     public data: {
       Title: string;
       Description: string;
+      CriticRating: string;
+      AudienceRating: string;
     },
     public dialogRef: MatDialogRef<SynopsisComponent>
-
   ) {}
   
   ngOnInit(): void {}
