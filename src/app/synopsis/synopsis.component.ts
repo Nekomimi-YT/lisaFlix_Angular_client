@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject} from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-synopsis',
@@ -13,8 +13,14 @@ export class SynopsisComponent implements OnInit {
     public data: {
       Title: string;
       Description: string;
-    }
+    },
+    public dialogRef: MatDialogRef<SynopsisComponent>
+
   ) {}
   
   ngOnInit(): void {}
+
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

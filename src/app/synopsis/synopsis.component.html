@@ -6,4 +6,12 @@
   <mat-card-content class="content">
     {{ data.Description }}
   </mat-card-content>
+  <mat-dialog-actions class="padding">
+    <button 
+      mat-raised-button
+      color="primary"
+      (click)="closeDialog()">
+        Close
+    </button>
+  </mat-dialog-actions>
 </mat-card>
