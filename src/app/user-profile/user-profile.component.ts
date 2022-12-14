@@ -7,6 +7,7 @@ import { fetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+import { format } from 'date-fns'
 
 @Component({
   selector: 'app-user-profile',
@@ -18,7 +19,7 @@ export class UserProfileComponent implements OnInit{
   user = localStorage.getItem('user');
   email = localStorage.getItem('email');
   birthday = localStorage.getItem('birthday');
-  profileBd = this.birthday?.slice(0,10);
+  profileBd: string = this.formatBirthday();
 
   @Input() updatedInfo = { Username: '', Password: '', Email: '', Birthday: '' };
 
@@ -30,14 +31,12 @@ export class UserProfileComponent implements OnInit{
 
   ngOnInit(): void {}
 
-  /*
-  formatBirthday(birthday): string {
-    let profileBdArray: []; => define in constructor?? 
-    this.profileBdArray = this.birthday?.slice(0,10).split('-'); => create an array: [yyyy,mm,dd]
-    let profileBd = this.profileBdArray?.push(this.profileBdArray.shift().join('/')); push the year to the end and join with /'s
-    return profileBd;
-  }
-  */
+  // format date syntax using date-fns format 
+  formatBirthday(): string {
+    this.birthday = localStorage.getItem('birthday') || "0000-00-00";
+    let bdFormatted: string = format(new Date(this.birthday.slice(0,10)), 'MM/dd/yyyy');
+    return bdFormatted;
+  } 
   
   // Update the user's profile information and return a confirmation
   updateUser(): void {
