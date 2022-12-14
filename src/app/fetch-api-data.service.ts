@@ -25,7 +25,6 @@ export class FetchApiDataService {
    * @function userRegistration
    */
   public userRegistration(userData: any): Observable<any> {
-    console.log(userData);
     return this.http
       .post(apiUrl + 'users', userData)
       .pipe(catchError(this.handleError)
@@ -40,7 +39,6 @@ export class FetchApiDataService {
    * @function userLogin
    */
   public userLogin(userData: any): Observable<any> {
-    console.log(userData);
     return this.http
       .post(apiUrl + 'login', userData)
       .pipe(catchError(this.handleError)
