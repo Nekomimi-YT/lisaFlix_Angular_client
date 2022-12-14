@@ -28,8 +28,11 @@
   <div class="grid">
   <mat-card *ngFor="let movie of movies;" class="mat-card__style grid__item"> 
     <mat-card-header class="mat-card-header__style">
-    <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{ movie.Director.Name }}</mat-card-subtitle>
+    <mat-card-title class="title">
+      {{ movie.Title }}<br>
+      {{ movie.ReleaseYear }}
+    </mat-card-title>
+      <mat-card-subtitle class="subtitle">Directed by: {{ movie.Director.Name }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <img src={{movie.ImagePath}} alt= {{movie.Title}} class="movie-image"/>
