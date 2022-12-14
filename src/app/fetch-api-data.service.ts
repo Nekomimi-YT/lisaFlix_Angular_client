@@ -11,7 +11,7 @@ const apiUrl = 'https://myflix-movieapp-bylisa.herokuapp.com/';
   providedIn: 'root'
 })
 
-export class fetchApiDataService {
+export class FetchApiDataService {
 
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http

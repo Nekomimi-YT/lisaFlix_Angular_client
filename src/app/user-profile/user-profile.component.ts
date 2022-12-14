@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 // This import brings in the API calls we created in 6.2
-import { fetchApiDataService } from '../fetch-api-data.service';
+import { FetchApiDataService } from '../fetch-api-data.service';
 
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -24,7 +24,7 @@ export class UserProfileComponent implements OnInit{
   @Input() updatedInfo = { Username: '', Password: '', Email: '', Birthday: '' };
 
   constructor(
-    public fetchApiData: fetchApiDataService,
+    public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
     private router: Router
     ) { }
