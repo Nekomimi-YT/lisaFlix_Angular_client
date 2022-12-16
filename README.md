@@ -63,4 +63,4 @@ As a user, I want to:
 
 ![Login to get started](/img/Login.png)
 
-![Main page with navbar, filter buttons and movies](/img/Movies.png)
+![Main page with navbar, filter buttons and movies](/img/Movies.jpg)
