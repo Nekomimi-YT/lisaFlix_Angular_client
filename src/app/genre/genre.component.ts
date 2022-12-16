@@ -1,3 +1,10 @@
+/**
+ * Sends information about the genre to the template
+ * Provides button functionality to close the dialog
+ *
+ * @packageDocumentation
+ */
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 

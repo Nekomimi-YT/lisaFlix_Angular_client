@@ -17,12 +17,16 @@ export class NavbarComponent {
     private router: Router
   ) {}
 
-  // Route to profile page
+  /**
+   * Routes to profile page
+   */
   openProfileView(): void {
     this.router.navigate(['profile']);
   }
 
-  // Logout and send user back to welcome page
+  /**
+   * Logout and send user back to welcome page
+   */
   logoutUser(): void {
     localStorage.clear();
     this.router.navigate(['welcome']).then(() => {

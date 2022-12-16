@@ -27,6 +27,9 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
+  /**
+   * @returns {array} all movies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -34,7 +37,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // Filter movies by favorites
+  /**
+   * Filter movies by favorites
+   * @returns {array} favorite movies
+   */
   displayFavorites(): any[] {
     this.getFavoriteMovies();
     this.allMovies = this.movies.slice();
@@ -44,7 +50,11 @@ export class MovieCardComponent implements OnInit {
     return this.movies;
   }
 
-  // Open the dialog when the genre button is clicked
+  /**
+   * Open the dialog when the genre button is clicked
+   * @params {string} name - genre name
+   * @params {string} description = genre description
+   */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: {
@@ -55,7 +65,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // Open the dialog when the director button is clicked
+  /**
+   * Open the dialog when the director button is clicked
+   * @params {string} name - director name
+   * @params {string} bio = director description
+   * @params {string} birth - director birth year
+   */
   openDirectorDialog(name: string, bio: string, birth: string): void {
     this.dialog.open(DirectorComponent, {
       data: {
@@ -67,7 +82,13 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // Open the dialog when synopsis is clicked
+  /**
+   * Open the dialog when the synopsis button is clicked
+   * @params {string} title - movie name
+   * @params {string} description = plot description
+   * @params {string} cRating = critic rating
+   * @params {string} aRating = audience rating
+   */
   openSynopsisDialog(
     title: string,
     description: string,
@@ -85,6 +106,9 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * @returns {array} favorite movies IDs
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.favorites = resp.favoriteMovies;
@@ -92,10 +116,19 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Tests if a movie id is included in the favorites array
+   * @params {string} movieID
+   * @returns {boolean}
+   */
   isFavoriteMovie(movieId: string): boolean {
     return this.favorites.includes(movieId);
   }
 
+  /**
+   * Adds a movie id to the favorites array
+   * @params {string} movieID
+   */
   addFavoriteMovie(movieId: string): void {
     this.fetchApiData.addFavorite(movieId).subscribe((result) => {
       this.snackBar.open('You have added this movie to your favorites!', 'OK', {
@@ -105,6 +138,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Deletes a movie id to the favorites array
+   * @params {string} movieID
+   */
   deleteFavoriteMovie(movieId: string): void {
     this.fetchApiData.deleteFavorite(movieId).subscribe((result) => {
       this.snackBar.open(

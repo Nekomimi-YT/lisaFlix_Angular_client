@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// This import brings in the API calls we created in 6.2
+// Brings in the API calls
 import { FetchApiDataService } from '../fetch-api-data.service';
 
-// This import is used to display notifications back to the user
+// Display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -35,7 +35,10 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // format date syntax using date-fns format
+  /**
+   * Format date syntax using date-fns format
+   * @returns {string} bdFormatted
+   */
   formatBirthday(): string {
     this.birthday = localStorage.getItem('birthday') || '0000-00-00';
     let bdFormatted: string = format(
@@ -45,7 +48,13 @@ export class UserProfileComponent implements OnInit {
     return bdFormatted;
   }
 
-  // Update the user's profile information and return a confirmation
+  /**
+   * Update the user's profile information and return a confirmation
+   * 
+   * @returns {object} result - updated user info
+   * 
+   * Reset user info in local storage
+   */
   updateUser(): void {
     this.fetchApiData.editUserInfo(this.updatedInfo).subscribe((result) => {
       console.log(result);
@@ -61,7 +70,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  // Delete user's account and send user back to welcome page
+  /**
+   * Delete user's account and send user back to welcome page
+   * Clears local storage
+   */
   deleteUserProfile(): void {
     this.router.navigate(['welcome']).then(() => {
       this.snackBar.open('You have successfully deleted your profile', 'OK', {
