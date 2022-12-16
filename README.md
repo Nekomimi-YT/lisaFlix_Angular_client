@@ -1,6 +1,7 @@
 # LisFlixAngularClient
 
-  [=> Go directly to project details and images](#project-details)
+  [=> Jump to project details](#project-details)
+  [=> Jump to project images](#images)
 
 ## Admin
 
@@ -49,6 +50,7 @@ As a user, I want to:
     * A button that opens a dialog,​ where details about the director of that particular movie will be displayed.
     * A button that opens a dialog,​ where details about that particular genre of the movie will be displayed.
     * A button that opens a dialog,​ where details about plot synopsis of the movie will be displayed.
+* App is fully responsive for use on laptop, tablet or mobile.
 
 ### Tech Specs
 
