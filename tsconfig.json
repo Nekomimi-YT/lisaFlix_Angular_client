@@ -27,8 +27,4 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "typedocOptions": {
-    "entryPoints": ["src/main.ts"],
-    "out": "docs"
-  }
 }
