@@ -1,7 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": [
-    "src/app/fetch-api-data-service.ts",
+    "src/app/fetch-api-data.service.ts",
     "src/app/director/director.component.ts",
     "src/app/genre/genre.component.ts",
     "src/app/movie-card/movie-card.component.ts",
