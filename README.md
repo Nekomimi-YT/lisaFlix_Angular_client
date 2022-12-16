@@ -1,7 +1,6 @@
 # LisFlixAngularClient
 
-	[Build it](#admin)
-  [More about this project](#project-details)
+  [** Go directly to project details and images](#project-details)
 
 ## Admin
 
