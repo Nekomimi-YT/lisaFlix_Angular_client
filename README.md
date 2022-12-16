@@ -1,6 +1,7 @@
 # LisFlixAngularClient
 
   [=> Jump to project details](#project-details)
+  
   [=> Jump to project images](#images)
 
 ## Admin
